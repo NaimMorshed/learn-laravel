@@ -467,6 +467,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-mt-px {
   margin-top: -1px;
 }
+.mt-5 {
+  margin-top: 1.25rem;
+}
+.mt-10 {
+  margin-top: 2.5rem;
+}
 .flex {
   display: flex;
 }
@@ -500,6 +506,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .max-w-6xl {
   max-width: 72rem;
 }
+.cursor-pointer {
+  cursor: pointer;
+}
 .list-disc {
   list-style-type: disc;
 }
@@ -521,12 +530,31 @@ Ensure the default browser behavior of the `hidden` attribute.
 .overflow-hidden {
   overflow: hidden;
 }
+.border {
+  border-width: 1px;
+}
 .border-t {
   border-top-width: 1px;
 }
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+.border-blue-800 {
+  --tw-border-opacity: 1;
+  border-color: rgb(30 64 175 / var(--tw-border-opacity));
+}
+.border-blue-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(96 165 250 / var(--tw-border-opacity));
+}
+.border-blue-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(147 197 253 / var(--tw-border-opacity));
+}
+.border-blue-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(191 219 254 / var(--tw-border-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -540,11 +568,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
+.bg-gray-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
 .p-6 {
   padding: 1.5rem;
 }
 .p-5 {
   padding: 1.25rem;
+}
+.p-3 {
+  padding: 0.75rem;
 }
 .py-4 {
   padding-top: 1rem;
@@ -575,6 +610,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 .font-bold {
   font-weight: 700;
@@ -613,6 +652,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -632,6 +679,11 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+.hover\:bg-blue-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 234 254 / var(--tw-bg-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
