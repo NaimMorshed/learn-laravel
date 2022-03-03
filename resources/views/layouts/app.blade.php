@@ -8,14 +8,14 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title>@yield('title')</title>
 </head>
-<body>
+<body class="grid grid-rows-[10%_80%_10%] min-h-screen">
     <header class="bg-gray-400 p-5 grid place-items-center">
         @yield('header')
     </header>
-    <main class="min-h-screen flex justify-center items-center flex-col">
+    <main class="flex justify-center items-center flex-col">
         @yield('content')
     </main>
-    <footer>
+    <footer class="bg-gray-400">
         @yield('footer')
     </footer>
 </body>
