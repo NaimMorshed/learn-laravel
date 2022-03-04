@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('content');
+            $table->tinyInteger('is_admin')->default('0');
             $table->timestamps();
         });
     }
