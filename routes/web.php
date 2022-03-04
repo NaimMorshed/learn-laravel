@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
 
+use function GuzzleHttp\Promise\all;
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -81,4 +83,22 @@ Route::get('/delete', function () {
         return "<h3>Deleted!</h3>";
     else
         return "<h3>Not deleted!</h3>";
+});
+
+
+/*
+------------------------------------------------------
+ELOQUENT Model
+------------------------------------------------------
+ */
+
+Route::get('/readmodel', function () {
+    $posts = Post::all();
+    foreach ($posts as $item) {
+        echo "<h3><li>$item->title</li></h3>";
+    }
+});
+
+Route::get('/find', function () {
+    return Post::find(1);
 });
