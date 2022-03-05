@@ -118,6 +118,21 @@ Route::get('/insert-model', function () {
     $post->save();
 });
 
+Route::get('/update-model', function () {
+    return Post::where('id', 2)->where('is_admin', 0)->update(['title'=>'NEW PHP title', 'content'=>'The content has also been updated']);
+});
+
+Route::get('/delete-model', function () {
+    $post = Post::find(3);
+    $post->delete();
+});
+
+Route::get('delete-easy', function () {
+    Post::destroy(4);                         // delete single
+    Post::destroy([1, 2]);                   // delete multiple
+    Post::where('id_admin', 0)->delete();   // using where
+});
+
 
 /*
 ------------------------------------------------------
@@ -126,5 +141,5 @@ Mass Assignment
  */
 
 Route::get('/create', function () {
-    Post::create(['title'=>'Title from mass', 'content'=>'This content has been created by mass assignment']);
+    return Post::create(['title'=>'Title from mass', 'content'=>'This content has been created by mass assignment']);
 });
