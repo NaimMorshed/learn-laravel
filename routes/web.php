@@ -74,7 +74,11 @@ Route::get('/read', function () {
 });
 
 Route::get('/update', function () {
-    return DB::update('update posts set title="Title updated" where id=?', [1]);
+    $result = DB::update('update posts set title="Laravel is fun" where id=?', [4]);
+    if ($result == 1)
+        return "<h3>Successfully updated!</h3>";
+    else
+        return "<h3>Updating failed!</h3>";
 });
 
 Route::get('/delete', function () {
@@ -92,7 +96,7 @@ ELOQUENT Model
 ------------------------------------------------------
  */
 
-Route::get('/readmodel', function () {
+Route::get('/read-model', function () {
     $posts = Post::all();
     foreach ($posts as $item) {
         echo "<h3><li>$item->title</li></h3>";
@@ -100,5 +104,16 @@ Route::get('/readmodel', function () {
 });
 
 Route::get('/find', function () {
-    return Post::find(1);
+    return Post::find(2);
+});
+
+Route::get('/find-where', function () {
+    return Post::where('id', 2)->orderBy('id', 'desc')->take(1)->get();
+});
+
+Route::get('/insert-model', function () {
+    $post = new Post;
+    $post->title = 'New model';
+    $post->content = 'Wow eloquent is really cool';
+    $post->save();
 });
