@@ -117,3 +117,14 @@ Route::get('/insert-model', function () {
     $post->content = 'Wow eloquent is really cool';
     $post->save();
 });
+
+
+/*
+------------------------------------------------------
+Mass Assignment
+------------------------------------------------------
+ */
+
+Route::get('/create', function () {
+    Post::create(['title'=>'Title from mass', 'content'=>'This content has been created by mass assignment']);
+});
